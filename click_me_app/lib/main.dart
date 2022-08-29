@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'Your current counter is at:',
             ),
             Text(
               '$_counter',
@@ -116,30 +116,36 @@ class _MyHomePageState extends State<MyHomePage> {
             const Align(
               alignment: Alignment.center,
               child: Image(
+                height: 500,
+                width: 500,
                 image: NetworkImage(
                     'https://garrettcollier.net/assets/imgs/avatar.jpg'),
               ),
             ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton(
-                onPressed: _incrementCounter,
-                tooltip: 'Increment',
-                child: const Text('+'),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: FloatingActionButton(
-                onPressed: _decrementCounter,
-                tooltip: 'Decrement',
-                child: const Text('-'),
-              ),
+            const Text('INCREMENT/DECREMENT LIKE YOUR LIFE DEPENDS ON IT!'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Align(
+                  child: FloatingActionButton(
+                    onPressed: _decrementCounter,
+                    tooltip: 'Decrement',
+                    child: const Text('-'),
+                  ),
+                ),
+                Align(
+                  child: FloatingActionButton(
+                    onPressed: _incrementCounter,
+                    tooltip: 'Increment',
+                    child: const Text('+'),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
+        // This trailing comma makes auto-formatting nicer for build methods.
       ),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
